@@ -1,9 +1,11 @@
+import java.util.ArrayList;
+
 public class Sistema {
 
     private String nome;
     private Stella stella;
-    private Pianeta[] pianeti;
-    public static double  G = 6.67408e-11;
+    private ArrayList<Pianeta> pianeti;
+    public static double G = 6.67408e-11;
 
     private int numPianeti;
     private final int MAX_PIANETI = 10;
@@ -12,7 +14,7 @@ public class Sistema {
         this.nome = nome;
         this.stella = stella;
 
-        pianeti = new Pianeta[MAX_PIANETI];
+        pianeti = new ArrayList<>(9);
         numPianeti = 0;
     }
 
@@ -20,38 +22,30 @@ public class Sistema {
 
         System.out.println("[");
 
-//        for (int i=0; i<pianeti.length; i++) {
-//            
-//            Pianeta p = pianeti[i];
-//        }
+        // for (int i=0; i<pianeti.length; i++) {
+        //
+        // Pianeta p = pianeti[i];
+        // }
         for (Pianeta p : pianeti) {
 
             // controllo se esiste il pianeta
-            if (p != null) {
-                p.stampaDati();
-            } else {
-                System.out.println("Nessun dato");
-            }
+            p.stampaDati();
         }
 
         System.out.println("]");
     }
+
+    // metodi con FEATURES di arrayList
 
     /**
      * Metodo per aggiungere un pianeta
      *
      * @param p1 Pianeta da aggiungere
      */
-    public boolean aggiungiPianeta(Pianeta p1) {
-        if (numPianeti >= 0 && numPianeti < MAX_PIANETI) {
-            pianeti[numPianeti] = p1;
-            numPianeti++;
-            return true;
-        } else {
-            return false;
-        }
+    public void appendi(Pianeta nuovo) {
+
+        pianeti.add(nuovo);
+
     }
-    
-    
 
 }

@@ -19,15 +19,15 @@ public class Astronomia {
         
         Sistema solare = new Sistema("Sistema solare", sole);
         
-        solare.aggiungiPianeta(p1);
-        solare.aggiungiPianeta(p2);
-        solare.aggiungiPianeta(p3);
-        solare.aggiungiPianeta(p4);
-        solare.aggiungiPianeta(p5);
-        solare.aggiungiPianeta(p6);
-        solare.aggiungiPianeta(p7);
-        solare.aggiungiPianeta(p8);
-        solare.aggiungiPianeta(p9);
+        solare.appendi(p1);
+        solare.appendi(p2);
+        solare.appendi(p3);
+        solare.appendi(p4);
+        solare.appendi(p5);
+        solare.appendi(p6);
+        solare.appendi(p7);
+        solare.appendi(p8);
+        solare.appendi(p9);
         solare.stampaPianeti();
         
         System.out.println(p1.gravità());
