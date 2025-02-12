@@ -7,15 +7,11 @@ public class Sistema {
     private ArrayList<Pianeta> pianeti;
     public static double G = 6.67408e-11;
 
-    private int numPianeti;
-    private final int MAX_PIANETI = 10;
-
     public Sistema(String nome, Stella stella) {
         this.nome = nome;
         this.stella = stella;
 
         pianeti = new ArrayList<>(9);
-        numPianeti = 0;
     }
 
     public void stampaPianeti() {
@@ -45,6 +41,18 @@ public class Sistema {
     public void appendi(Pianeta nuovo) {
 
         pianeti.add(nuovo);
+
+    }
+
+    public boolean inserisci(Pianeta nuovo, int pos) {
+
+        if (pos < 0 || pos > pianeti.size()) {
+            return false;
+        } else {
+            // aggiungo pianeta nella pos scelta, shiftando il resto
+            pianeti.add(pos, nuovo);
+            return true;
+        }
 
     }
 

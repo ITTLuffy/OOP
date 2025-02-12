@@ -39,6 +39,10 @@ public class Astronomia {
         System.out.println(p7.gravità());
         System.out.println(p8.gravità());
         System.out.println(p9.gravità());
+
+        solare.inserisci(p9, 4);
+        solare.inserisci(p1, 0);
+        solare.stampaPianeti();
         
     }
     
