@@ -43,6 +43,11 @@ public class Astronomia {
         solare.inserisci(p9, 4);
         solare.inserisci(p1, 0);
         solare.stampaPianeti();
+
+        System.out.println("Plutone " + solare.contiene(p9));
+        System.out.println("Plutone " + solare.trovaPosizione(p9));
+
+        
         
     }
     

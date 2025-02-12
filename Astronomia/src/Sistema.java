@@ -56,4 +56,29 @@ public class Sistema {
 
     }
 
+    public boolean contiene(Pianeta cercato) {
+        return pianeti.contains(cercato);
+    }
+
+    public int trovaPosizione(Pianeta cercato) {
+        return pianeti.indexOf(cercato);
+    }
+
+    public Pianeta leggi(int pos) {
+        if (pos < 0 || pos > pianeti.size()) {
+            return null;
+        }
+        return pianeti.get(pos);
+    }
+
+    public Pianeta sostituisce(int pos, Pianeta nuovo){
+        if (pos < 0 || pos > pianeti.size()) {
+            return null;
+        }
+        
+        return pianeti.set(pos, nuovo);
+
+    }
+
+
 }
