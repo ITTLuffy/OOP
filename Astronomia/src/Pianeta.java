@@ -3,7 +3,6 @@ public class Pianeta {
     // attributi o campi
     private String nome;
     private double massa, raggio, distanzaStella;
-    private final double COST_GRAVIT = 6.67408e-11;
     // information hiding
     
     // -----------------------------
@@ -45,8 +44,8 @@ public class Pianeta {
         System.out.println(this.nome + ": " + this.distanzaStella);
     }
     
-    public double gravità(Pianeta p1) {
-        return (COST_GRAVIT*p1.getMassa())/Math.pow(p1.getRaggio(), 2);
+    public double gravità() {
+        return (Sistema.G*this.massa)/Math.pow(this.raggio, 2);
     }
     
 }

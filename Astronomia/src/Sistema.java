@@ -3,6 +3,7 @@ public class Sistema {
     private String nome;
     private Stella stella;
     private Pianeta[] pianeti;
+    public static double  G = 6.67408e-11;
 
     private int numPianeti;
     private final int MAX_PIANETI = 10;

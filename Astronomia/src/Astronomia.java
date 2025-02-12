@@ -30,15 +30,15 @@ public class Astronomia {
         solare.aggiungiPianeta(p9);
         solare.stampaPianeti();
         
-        System.out.println(p1.gravità(p1));
-        System.out.println(p2.gravità(p2));
-        System.out.println(p3.gravità(p3));
-        System.out.println(p4.gravità(p4));
-        System.out.println(p5.gravità(p5));
-        System.out.println(p6.gravità(p6));
-        System.out.println(p7.gravità(p7));
-        System.out.println(p8.gravità(p8));
-        System.out.println(p9.gravità(p9));
+        System.out.println(p1.gravità());
+        System.out.println(p2.gravità());
+        System.out.println(p3.gravità());
+        System.out.println(p4.gravità());
+        System.out.println(p5.gravità());
+        System.out.println(p6.gravità());
+        System.out.println(p7.gravità());
+        System.out.println(p8.gravità());
+        System.out.println(p9.gravità());
         
     }
     
