@@ -111,5 +111,11 @@ public class Sistema {
 
     }
 
+    public boolean isVuoto() {
+        return pianeti.isEmpty();
+    }
+
+    
+
 
 }
