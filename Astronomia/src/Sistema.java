@@ -80,5 +80,36 @@ public class Sistema {
 
     }
 
+    public Pianeta rimuovi(int pos) {
+        if (pos < 0 || pos > pianeti.size()) {
+            return null;
+        }
+        return pianeti.remove(pos);
+    }
+
+    public boolean cercaPianeta(String nomePianeta) {
+        for (Pianeta nuovo : pianeti) {
+            if (nuovo.getNome().equals(nomePianeta)) {
+                return true;
+            }
+            
+        }
+        return false;
+    }
+
+    public int rimuoviTutti(Pianeta nuovo) {
+        int pianetiTrovati = 0;
+        for (int idx = pianeti.size() - 1; idx >= 0; idx--) {
+            // if (pianeti.get(idx) == p) --> l'istanza è la stessa
+            if (pianeti.get(idx).getNome().equals(nuovo.getNome())) { // si possono anche confrontare le istanze in questo caso
+                pianetiTrovati++;
+                pianeti.remove(idx);
+            }
+            
+        }
+        return pianetiTrovati;
+
+    }
+
 
 }

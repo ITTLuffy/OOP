@@ -47,6 +47,8 @@ public class Astronomia {
         System.out.println("Plutone " + solare.contiene(p9));
         System.out.println("Plutone " + solare.trovaPosizione(p9));
 
+        System.out.println("Doppioni " + solare.rimuoviTutti(p9));
+
         
         
     }
