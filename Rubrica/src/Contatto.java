@@ -1,10 +1,23 @@
 public class Contatto {
-    private String nome, cognome;
-    String telefono;
-    Genere genere;
-    
-    // incapsulation
 
+    // attributi, con information hiding
+    private String nome, cognome, telefono; 
+    private Genere genere;
+
+    // costruttore 
+    
+    public Contatto() {
+    }
+
+    public Contatto(String nome, String cognome, String telefono, Genere genere) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.telefono = telefono;
+        this.genere = genere;
+    }
+
+    // incapsulation
+    
     public String getNome() {
         return nome;
     }
@@ -24,23 +37,15 @@ public class Contatto {
     public Genere getGenere() {
         return genere;
     }
-
-    public Contatto() {
-    }
-
-    public Contatto(String nome, String cognome, String telefono, Genere genere) {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.telefono = telefono;
-        this.genere = genere;
-    }
     
+    // metodo x stampare i dati
     public String stampaDati() {
-        return nome + " " + cognome + " " + telefono + " " + genere;
+        return nome.charAt(0) + " " + cognome;
     }
 
-    
-    
-    
-    
+    // metodo per sapere se il nome di un contatto è uguale a quello di un altro
+    public boolean isOmonimo(Contatto altro) {
+        return nome.equals(altro.getNome()) && cognome.equals(altro.getCognome());
+    }
+
 }
