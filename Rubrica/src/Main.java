@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 
 public class Main {
@@ -10,12 +9,12 @@ public class Main {
         Contatto c3 = new Contatto("Federico", "Esposito", "0817654329", Genere.Maschio);
         Contatto c4 = new Contatto("Manuel", "Gjergji", "3135928471", Genere.Maschio);
         Contatto c5 = new Contatto("Mohammad", "Alì", "3924175839", Genere.Maschio);
-        Contatto c6 = new Contatto("Maurizio", "Ferrari", "3668412067", Genere.Maschio);
+        Contatto c6 = new Contatto("Maurizio", "Ferrari", "3668412067", Genere.NonBinario);
         Contatto c7 = new Contatto("Davide", "Cesari", "025789643", Genere.Maschio);
         Contatto c8 = new Contatto("Giacomo", "Masiero", "3892741563", Genere.Maschio);
-        Contatto c9 = new Contatto("Eduard", "Apetroaie", "069874321", Genere.Maschio);
-        Contatto c10 = new Contatto("Lucio", "Esposito", "3209475638", Genere.Maschio);
-        Contatto c11 = new Contatto("Mummi", "Esposito", "0113498271", Genere.Maschio);
+        Contatto c9 = new Contatto("Eduard", "Apetroaie", "444564864153", Genere.Maschio);
+        Contatto c10 = new Contatto("Lucio", "Esposito", "339228718", Genere.NonBinario);
+        Contatto c11 = new Contatto("Mummi", "Esposito", "0113498271", Genere.Femmina);
         System.out.println(c1.isOmonimo(c3));
         
         c1.stampaDati();
@@ -33,12 +32,14 @@ public class Main {
         r1.aggiungiContatto(c11);
                 
         r1.stampaContatti();
+        System.out.println(r1.cercaDoppioniPotente());
+
         
         
-        System.out.println(r1.contaNumeriFissi());
-        System.out.println(r1.cercaDoppioni("0817654329"));
-        ArrayList<Contatto> nuovo = new ArrayList<>(2);
-        nuovo = r1.ricercaAvanzata("Espo");
+        // System.out.println(r1.contaNumeriFissi());
+        // System.out.println(r1.cercaDoppioni("0817654329"));
+        // ArrayList<Contatto> nuovo = new ArrayList<>(2);
+        // nuovo = r1.ricercaAvanzata("Espo");
         
         
         

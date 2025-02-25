@@ -40,7 +40,7 @@ public class Contatto {
     
     // metodo x stampare i dati
     public String stampaDati() {
-        return nome.charAt(0) + " " + cognome;
+        return nome.charAt(0) + ". " + cognome;
     }
 
     // metodo per sapere se il nome di un contatto è uguale a quello di un altro

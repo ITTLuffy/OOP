@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 public class Rubrica {
@@ -49,10 +50,9 @@ public class Rubrica {
     public int contaNumeriFissi() {
         int c = 0;
         for (Contatto contatto : contatti) {
-            if (contatto.getTelefono().charAt(contatto.getTelefono().length() - 1) == '0') { // via n. 1
+            if (contatto.getTelefono().startsWith("0")) {
                 c++;
             }
-
             // altra via
             // if (contatto.getTelefono().startsWith(0)) ...
         }
@@ -70,6 +70,24 @@ public class Rubrica {
             }
         }
         return false;
+    }
+
+    /**
+     * boolean cercaDoppioniPotente(), cerca se sono presenti contatti che
+     * @return possiedono lo stesso numero di telefono
+     */
+    public boolean cercaDoppioniPotente() {
+        for (int i = 0; i < contatti.size(); i++) {
+            for (int j = 0; j < contatti.size(); j++) {
+                if (contatti.get(i).getTelefono().equals(contatti.get(j).getTelefono()) && i != j) {
+                    return true;
+                }
+
+            }
+            
+        }
+        return false;
+        
     }
 
     /*
