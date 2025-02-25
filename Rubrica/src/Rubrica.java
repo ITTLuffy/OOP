@@ -90,6 +90,17 @@ public class Rubrica {
         
     }
 
+    public boolean cercaDoppioniForEach() {
+        for (Contatto contatto : contatti) {
+            for (Contatto contatto2 : contatti) {
+                if (contatto.getTelefono().equals(contatto2.getTelefono()) && contatto != contatto2) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     /*
     ArrayList<Contatto> ricercaAvanzata(String cercata), produce una lista di contatti che presentano, 
     nel nome O nel cognome, la sottostringa cercata. 
