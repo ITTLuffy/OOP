@@ -19,12 +19,19 @@ public class Rubrica {
      */
     // metodo x aggiungere un contatto all'array
     public void aggiungiContatto(Contatto nuovo) {
+        boolean presente = false;
         for (Contatto contatto : contatti) {
-            if (nuovo.isOmonimo(contatto)) {
+            if (contatto.isOmonimo(nuovo)) {
+                presente = true;
+
                 contatto.setTelefono(nuovo.getTelefono());
+
+                break;
             }
         }
-        contatti.add(nuovo);
+        if (!presente) {
+            contatti.add(nuovo);    
+        }
     }
 
     // metodo x stampare i contatti, utilizzando il metodo stampaDati
@@ -74,7 +81,9 @@ public class Rubrica {
 
     /**
      * boolean cercaDoppioniPotente(), cerca se sono presenti contatti che
+     *
      * @return possiedono lo stesso numero di telefono
+     *
      */
     public boolean cercaDoppioniPotente() {
         for (int i = 0; i < contatti.size(); i++) {
@@ -84,13 +93,16 @@ public class Rubrica {
                 }
 
             }
-            
-        }
-        return false;
+
+            return false;
         
-    }
+
+
+    
 
     public boolean cercaDoppioniForEach() {
+    
+
         for (Contatto contatto : contatti) {
             for (Contatto contatto2 : contatti) {
                 if (contatto.getTelefono().equals(contatto2.getTelefono()) && contatto != contatto2) {
