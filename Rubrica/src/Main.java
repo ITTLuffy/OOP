@@ -37,12 +37,11 @@ public class Main {
         
         System.out.println(r1.contaNumeriFissi());
         System.out.println(r1.cercaDoppioni("0817654329"));
-        ArrayList<Contatto> nuovo = new ArrayList<>(2);
-        nuovo = r1.ricercaAvanzata("Espo");
-        
-        
-        
-        
+        ArrayList<Contatto> nuovo = r1.ricercaAvanzata("Espo");
+        for (Contatto c : nuovo) {
+            c.stampaDati();
+        }
+
     }
     
 }
