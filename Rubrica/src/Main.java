@@ -5,43 +5,54 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Contatto c1 = new Contatto("Alessio", "Ferrari", "3478156324", Genere.Maschio);
-        Contatto c2 = new Contatto("Mario", "Rossi", "3786521490", Genere.Maschio);
-        Contatto c3 = new Contatto("Federico", "Esposito", "0817654329", Genere.Maschio);
-        Contatto c4 = new Contatto("Manuel", "Gjergji", "3135928471", Genere.Maschio);
-        Contatto c5 = new Contatto("Mohammad", "Alì", "3924175839", Genere.Maschio);
-        Contatto c6 = new Contatto("Maurizio", "Ferrari", "3668412067", Genere.Maschio);
-        Contatto c7 = new Contatto("Davide", "Cesari", "025789643", Genere.Maschio);
-        Contatto c8 = new Contatto("Giacomo", "Masiero", "3892741563", Genere.Maschio);
-        Contatto c9 = new Contatto("Eduard", "Apetroaie", "069874321", Genere.Maschio);
-        Contatto c10 = new Contatto("Lucio", "Esposito", "3209475638", Genere.Maschio);
-        Contatto c11 = new Contatto("Mummi", "Esposito", "0113498271", Genere.Maschio);
-        System.out.println(c1.isOmonimo(c3));
+        Contatto c1 = new Contatto("Filippo", "Pilati", "1234567", Genere.Maschio, 17);
+        Contatto c2 = new Contatto("Gabriele", "Pittui", "012345678", Genere.Maschio, 17);
+        Contatto c3 = new Contatto("Manuela", "Toniolli", "663478", Genere.Femmina, 30);
+        Contatto c4 = new Contatto("Federico", "Esposito", "2356235", Genere.Maschio, 16);
+        Contatto c5 = new Contatto("Davide", "Cesari", "12452352", Genere.Maschio, 16);
+        Contatto c6 = new Contatto("Amedeo", "Romani", "12452352", Genere.Maschio, 16);
+        Contatto c7 = new Contatto("Nicolas", "Rosa", "056845", Genere.Maschio, 16);
+        Contatto c8 = new Contatto("Joshua", "Susman", "3456346", Genere.Maschio, 21);
+        Contatto c9 = new Contatto("Joshua", "Susman", "121212", Genere.Maschio, 16);
         
-        c1.stampaDati();
-        Rubrica r1 = new Rubrica();
-        r1.aggiungiContatto(c1);
-        r1.aggiungiContatto(c2);
-        r1.aggiungiContatto(c3);
-        r1.aggiungiContatto(c4);
-        r1.aggiungiContatto(c5);
-        r1.aggiungiContatto(c6);
-        r1.aggiungiContatto(c7);
-        r1.aggiungiContatto(c8);
-        r1.aggiungiContatto(c9);
-        r1.aggiungiContatto(c10);
-        r1.aggiungiContatto(c11);
-                
-        r1.stampaContatti();
+        Rubrica rubrica = new Rubrica();
+        rubrica.aggiungiContatto(c1);
+        rubrica.aggiungiContatto(c2);
+        rubrica.aggiungiContatto(c3);
+        rubrica.aggiungiContatto(c4);
+        rubrica.aggiungiContatto(c5);
+        rubrica.aggiungiContatto(c6);
+        rubrica.aggiungiContatto(c7);
+        rubrica.aggiungiContatto(c8);
         
+        rubrica.stampaContatti();
         
-        System.out.println(r1.contaNumeriFissi());
-        System.out.println(r1.cercaDoppioni("0817654329"));
-        ArrayList<Contatto> nuovo = r1.ricercaAvanzata("Espo");
-        for (Contatto c : nuovo) {
+        System.out.println("Numeri fissi: " + rubrica.contaNumeriFissi());
+        
+        System.out.println(rubrica.isDoppione("3456346"));
+
+        rubrica.aggiungiContatto(c9);
+        
+        rubrica.stampaContatti();
+        
+        System.out.println(rubrica.cercaDoppioni());
+        
+        ArrayList<Contatto> filtro = rubrica.ricercaAvanzata("man");
+        
+        for (Contatto c : filtro) {
             c.stampaDati();
         }
-
+        
+        // ordinamento per cognome
+        rubrica.ordinaCognome();
+        rubrica.stampaContatti();
+        
+        rubrica.ordinaNome();
+        rubrica.stampaContatti();
+        
+        rubrica.ordinaEta(false);
+        rubrica.stampaContatti();
+        
     }
     
 }
