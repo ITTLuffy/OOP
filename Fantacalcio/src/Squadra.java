@@ -55,11 +55,13 @@ public class Squadra {
     calciatore con la mediaVoto più alta
      */
     public Calciatore cercaMigliore() {
+        // se nn ci sono calciatori
+        if (calciatori.isEmpty())
+            return null;
         Calciatore migliore = calciatori.get(0);  // Inizializza con il primo calciatore della lista
-        for (int i = 1; i < calciatori.size(); i++) {  // Inizia dal secondo calciatore
-            if (calciatori.get(i).getMediaVoto() > migliore.getMediaVoto()) {
-                migliore = calciatori.get(i);  // Aggiorna il miglior calciatore
-            }
+        for(Calciatore calciatore : calciatori) {
+            if (calciatore.getMediaVoto() > migliore.getMediaVoto())
+                migliore = calciatore;
         }
         return migliore;
     }
@@ -72,9 +74,8 @@ public class Squadra {
     public ArrayList<Calciatore> trovaPeggiori() {
         ArrayList<Calciatore> peggiori = new ArrayList<>(); // arrayList da restituire
         for (int i = 0; i < calciatori.size(); i++) {
-            if (calciatori.get(i).getRuolo() != Ruolo.POR && calciatori.get(i).getMediaVoto() < 6) {
+            if (calciatori.get(i).getRuolo() != Ruolo.POR && calciatori.get(i).getMediaVoto() < 6) 
                 peggiori.add(calciatori.get(i));
-            }
         }
         return peggiori;
     }
@@ -85,12 +86,11 @@ public class Squadra {
      */
     public int rimuoviInfortunati() {
         int rimossi = 0;
-        for (int i = 0; i < calciatori.size(); i++) {
-            if (calciatori.get(i).isInfortunato()) {
+        for (int i = calciatori.size()-1; i >= 0; i--) {
+            if (calciatori.get(i).isInfortunato()) 
                 calciatori.remove(i);
-                rimossi++;
-            }
-
+                    rimossi++;
+            
         }
 
         return rimossi;
@@ -104,7 +104,7 @@ public class Squadra {
      */
     public void aggiungiGiocatore(Calciatore nuovo) {
         Ruolo finale = nuovo.getRuolo(); // ruolo
-        int limite;
+        int limite = 0;
         switch(finale) { // switch
             case POR -> {
                 limite = MAX_POR;
@@ -122,7 +122,9 @@ public class Squadra {
             }
         }
         // switch
-        
+        if (contaPerRuolo(finale) < limite) {
+            calciatori.add(nuovo);
+        }
     }
 
 }
