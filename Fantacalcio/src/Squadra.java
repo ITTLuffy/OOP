@@ -104,26 +104,19 @@ public class Squadra {
      */
     public void aggiungiGiocatore(Calciatore nuovo) {
         Ruolo finale = nuovo.getRuolo(); // ruolo
+        int limite;
         switch(finale) { // switch
             case POR -> {
-                if (contaPerRuolo(finale) < MAX_POR) { // varie condizioni x aggiungere
-                    calciatori.add(nuovo);
-                }
+                limite = MAX_POR;
             }
             case DIF -> {
-                if (contaPerRuolo(finale) < MAX_DIF) {
-                    calciatori.add(nuovo);
-                }
+                limite = MAX_DIF;
             }
             case CEN -> {
-                if (contaPerRuolo(finale) < MAX_CEN) {
-                    calciatori.add(nuovo);
-                }
+                limite = MAX_CEN;
             }
             case ATT -> {
-                if (contaPerRuolo(finale) < MAX_ATT) {
-                    calciatori.add(nuovo);
-                }
+                limite = MAX_ATT;
             }
             default -> {
             }
