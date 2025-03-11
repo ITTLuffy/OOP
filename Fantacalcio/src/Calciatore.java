@@ -60,6 +60,7 @@ public class Calciatore {
         System.out.println("Nome: " + nome + " congome: " + 
                 cognome + " ruolo: " + ruolo + " mediaVoto:"
                         + " " + mediaVoto + " è infortunato: " + infortunato);
+        // System.out.printf("nome: %s, cognome: %s, ruolo: %s\n", nome, cognome, ruolo);
     }
     
 }

@@ -12,7 +12,7 @@ public class Squadra {
 
     public Squadra(String nome) {
         this.nome = nome;
-        calciatori = new ArrayList<>(11);
+        calciatori = new ArrayList<>();
     }
 
     public String getNome() {

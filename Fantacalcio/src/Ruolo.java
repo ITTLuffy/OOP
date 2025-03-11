@@ -1,3 +1,3 @@
 public enum Ruolo {
-    POR, DIF, CEN, ATT
+    POR, DIF, CEN, ATT;
 }
