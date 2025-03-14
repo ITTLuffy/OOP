@@ -10,10 +10,6 @@ public class Figura {
         punti = new ArrayList<>();
     }
 
-    public boolean isPoligonoChiuso() {
-
-    }
-
     public void tingi(Colore c) {
         for (Punto punto : punti) {
             punto.setColore(c);
@@ -31,10 +27,6 @@ public class Figura {
 
         }
         return ris;
-    }
-
-    public double segnmentoPiuLungo() {
-
     }
 
 }
