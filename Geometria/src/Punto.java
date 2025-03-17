@@ -8,7 +8,7 @@ public class Punto {
     // costruttori
     public Punto() {
     }
-    
+
     public Punto(int x, int y, Colore colore) {
         this.x = x;
         this.y = y;
@@ -39,16 +39,16 @@ public class Punto {
     public void setColore(Colore colore) {
         this.colore = colore;
     }
-    
-    public double distanza(Punto p1, Punto p2) {
-        int distanzaX;
-        int distanzaY;
-        
-        distanzaX = p1.getX() - p2.getX();
-        distanzaY = p1.getY() - p2.getY();     
-        double risultato;
-        return risultato = Math.sqrt(Math.pow(distanzaX, 2) + Math.pow(distanzaY, 2));
+
+    /*
+    - double distanza(Punto altro), calcola la distanza euclidea tra le 
+      coordinate del punto corrente e quello passato come parametro
+    */
+    public static double distanza(Punto p1, Punto p2) {
+        int distanzaX = p1.getX() - p2.getX();
+        int distanzaY = p1.getY() - p2.getY();
+        double risultato = Math.sqrt(Math.pow(distanzaX, 2) + Math.pow(distanzaY, 2));
+        return risultato;
     }
-    
-    
+
 }
